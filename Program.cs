@@ -17,16 +17,21 @@ namespace _3_2_13
     В этом классе создаем публичную переменную text и метод FindUpper().
     В этом методе сперва объявляется массив символов sep, которые будут
     являться разделителями текста на слова. Далее создаем массив слов myWords.
-    И в цикле проходим покаждому слову, и если первая буква слова большая,
+    И в цикле проходим по каждому слову, и если первая буква слова большая,
     добавляем это слово в строку result.
     */
     class Text
     {
-        public string text;        
+        private string stroka;
+        public string Stroka
+        {
+            get { return stroka; }
+            set { stroka = value; }
+        }
         public string FindUppper()
         {
             char[] sep = { ' ', '.' };
-            string[] myWords = text.Split(sep, StringSplitOptions.RemoveEmptyEntries);
+            string[] myWords = stroka.Split(sep, StringSplitOptions.RemoveEmptyEntries);
 
             string result = "";
             for (int i = 0; i < myWords.Length; i++)
@@ -44,7 +49,7 @@ namespace _3_2_13
             // На основе класса Text создаем объект myString.
             Text myString = new Text();
             // Присваиваем полю объекта myString.text - значение.
-            myString.text = "Это ПриМер текста Jxtym прОстой.";
+            myString.Stroka = "Это ПриМер текста Jxtym прОстой.";
             // Выводим на экран результат работы метода FindUppper().         
             Console.WriteLine(myString.FindUppper());
             Console.ReadKey();
