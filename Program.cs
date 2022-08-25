@@ -22,16 +22,13 @@ namespace _3_2_13
     */
     class Text
     {
-        private string stroka;
         public string Stroka
-        {
-            get { return stroka; }
-            set { stroka = value; }
-        }
+            { get; set; }        
+        
         public string FindUppper()
         {
             char[] sep = { ' ', '.' };
-            string[] myWords = stroka.Split(sep, StringSplitOptions.RemoveEmptyEntries);
+            string[] myWords = Stroka.Split(sep, StringSplitOptions.RemoveEmptyEntries);
 
             string result = "";
             for (int i = 0; i < myWords.Length; i++)
